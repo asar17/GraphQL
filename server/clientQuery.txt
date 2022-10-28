@@ -1,0 +1,84 @@
+query getAllUsers{
+  users{
+    _id
+    firstName
+    lastName
+    password
+    email
+  }
+}
+===========================================
+query getAllQuotes{
+  quotes{
+    name
+    by
+  }
+}
+============================================
+query getUserBy_id{
+  user(_id:"23131"){
+    _id
+    firstName
+    lastName
+    password
+    email
+  }
+}
+================================================
+query getQuotesBy_id{
+  iquotes(by:"23131"){
+    name
+    by
+  }
+}
+==================================================
+query getAllUsersWithQuotes{
+  users{
+    _id
+    firstName
+    lastName
+    password
+    email
+    quotes{
+      name
+      by
+    }
+  }
+}
+====================================================
+query getUserWithQuotes{
+  user(_id:"23131"){
+    _id
+    firstName
+    lastName
+    password
+    email
+    quotes{
+      name
+      by
+    }
+  }
+}
+=======================================================
+mutation createNewUser($newUser:UserInput){
+  signupUser(newUser:$newUser){
+    _id
+    firstName
+    lastName
+    password
+    email
+  }
+}
+==========================================================
+mutation signinUser($userSign:UserSigninInput){
+  signinUser(userSign:$userSign){
+    token
+  }
+}
+==========================================================
+must do this mutation after  mutation signinUser
+ mutation createQuote{
+  createQuote(name:"nice another quote two")
+}
+============================================================
+

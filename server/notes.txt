@@ -1,0 +1,4 @@
+function called populate;
+Quote.find({}).populate('by',"_id lastName")
+بعد لما عمل {فايند} بقي عنه الاكسس ع البيانات كلها ويقدر يجيب الفيرست نيم واللاست نيم
+populate function is used to replace the id with the document which consists of my data
